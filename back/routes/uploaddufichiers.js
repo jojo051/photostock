@@ -2,34 +2,29 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest: 'tmp/' });
-const fs = require('fs');
+const fs = require('node:fs');
 
 router.get("/", (req, res) => {
     res.send("Welcome to uploads");
   }); 
   
-/* router.post('/', upload.single('monfichier'), function (req, res, next) {
-fs.rename(req.file.path, 'public/images/' + req.file.originalname, function(err){
+router.post('/', upload.array('mesfichiers'), function (req, res, next) {
+  //traitement des donné fitre les type ou se que l'on veut
+  //const data = req.files.filter(i => i.mimetype.includes("image/jpeg") || i.mimetype.includes("image/png"));
+  const data = req.files.filter(i => i.size < 10000)
+  fs.rename(data[0].path, 'public/images/' + data[0].originalname, function(err) {
     if (err) {
-    res.send('problème durant le déplacement');
-    } else {
-    res.send('Fichier uploadé avec succès');
-    }
-    });
-}) */
-
-//multiple envoie
-router.post('/', upload.array('mesfichiers'), function (req, res) {
-  for (let index = 0; index < req.files.length; index++) {
-    const element = req.files[index];
-    fs.rename(element.path, 'public/images'+ element.originalname, function(err){
-      if (err) {
       res.send('problème durant le déplacement');
-      } else {
-      res.send("Fichiers uploadé avec succès https://localhost:3000/");
-      }
-    });
-  }
-})
-
+    } else {
+      res.send("Fichiers uploadé avec succès");
+    }
+  });
+  //efface les fichiers non traiter qui se trouve dans ./tmp
+  const pathTmp = req.files.filter(i => i.size > 10000)
+  fs.rm(pathTmp[0].path, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+});
 module.exports = router;

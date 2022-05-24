@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test upload</title>
+</head>
+<body>
+    <div>
+        <a href="http://localhost:8000/api">api</a>
+        <a href="http://localhost:8000/coments">comments</a>
+        <a href="http://localhost:8000/images">images</a>
+    </div>
+    <div>
+        <h1>un envoie</h1>
+        <form method="POST" enctype="multipart/form-data" action="http://localhost:8000/uploaddufichier">
+            <input type="file" name="monfichier">
+            <button> envoyer </button>
+        </form>
+        <hr>
+        <h1>multiple envoie</h1>
+        <form method="POST" enctype="multipart/form-data" action="uploaddufichier">
+            <input type="file" name="monfichier" multiple>
+            <button> envoyer </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -4,7 +4,7 @@ import axios from "axios";
 const MultipleSending = () => {
   const[files,setFiles]=useState([]);
   const[imageURLs,setImageURLs]=useState([])
-  const PATH_URL = "http://localhost:8000/uploaddufichiers";
+  const PATH_URL = "https://jojo-retro.hd.free.fr:8000/uploaddufichiers";
 
   useEffect(()=>{
     if (files.length<1)return;

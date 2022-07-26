@@ -8,26 +8,22 @@ app.use(cors());
 app.use(fileupload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.get("/", (req, res) => {
   res.send("Welcome to Express");
 });
 
 //lecture image et text
-app.get("/images",(req, res) => {
-  res.sendFile("./public/images/troll.png",{ root: '.' });
-}); 
-
-app.get("/static",(req, res) => {
-  res.sendFile("./public/images/baseDeDonneTest.txt",{ root: '.' });
-}); 
+app.use(express.static('public'));
+app.use('/images', express.static('images'));
 
 //path
+//const images = require('./routes/images.js');
 const coments = require('./routes/coments.js');
 const api = require('./routes/api.js');
 const uploaddufichier = require('./routes/uploaddufichier.js');
 const uploaddufichiers = require('./routes/uploaddufichiers.js');
 
+//app.use ('/images', images);
 app.use ('/coments', coments);
 app.use ('/api', api);
 app.use ('/uploaddufichier', uploaddufichier);

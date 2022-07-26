@@ -24,15 +24,14 @@ const MultipleSending = () => {
     files.forEach(file=>{
       formData.append("files", file);
     });
-    console.log("1",formData);
     axios({
       method: "post",
       url: PATH_URL,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
-    .then((res)=>console.log("err",res))
-    .catch((err)=>console.log("err1",err))
+    .then((res)=>console.log("res",res))
+    .catch((err)=>alert(err.response.data))
   };
 
   return (

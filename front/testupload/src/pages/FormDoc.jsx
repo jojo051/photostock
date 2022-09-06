@@ -2,6 +2,7 @@ import React from 'react';
 import MultipleSending from '../components/MultipleSending';
 import SingleShipment from '../components/SingleShipment';
 import TestPages from '../components/TestPages';
+import ViewImages from '../components/ViewImages';
 
 const FormDoc = () => {
   return (
@@ -11,6 +12,8 @@ const FormDoc = () => {
       <SingleShipment />
       <hr/>
       <MultipleSending />
+      <hr />
+      <ViewImages />
     </div>
   );
 };

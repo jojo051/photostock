@@ -4,7 +4,7 @@ import axios from "axios";
 const MultipleSending = () => {
   const[files,setFiles]=useState([]);
   const[imageURLs,setImageURLs]=useState([])
-  const PATH_URL = "https://jojo-retro.hd.free.fr:8000/uploaddufichiers";
+  const PATH_URL = "https://localhost:8000/uploaddufichiers";
 
   useEffect(()=>{
     if (files.length<1)return;
@@ -31,7 +31,7 @@ const MultipleSending = () => {
       headers: { "Content-Type": "multipart/form-data" },
     })
     .then((res)=>console.log("res",res))
-    .catch((err)=>alert(err.response.data))
+    .catch((err)=>alert(err.response.data, "fichier pas evoyer"))
   };
 
   return (

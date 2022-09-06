@@ -28,12 +28,14 @@ const coments = require('./routes/coments.js');
 const api = require('./routes/api.js');
 const uploaddufichier = require('./routes/uploaddufichier.js');
 const uploaddufichiers = require('./routes/uploaddufichiers.js');
+const viewImages = require('./routes/viewImages.js');
 
 //app.use ('/images', images);
 app.use ('/coments', coments);
 app.use ('/api', api);
 app.use ('/uploaddufichier', uploaddufichier);
 app.use ('/uploaddufichiers', uploaddufichiers);
+app.use ('/viewimages', viewImages);
 
 
 const server = https.createServer(options, app).listen(process.env.PORT, function(){

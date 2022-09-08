@@ -34,6 +34,7 @@ const viewImages = require('./routes/viewImages.js');
 app.use ('/coments', coments);
 app.use ('/api', api);
 app.use ('/uploaddufichier', uploaddufichier);
+
 app.use ('/uploaddufichiers', uploaddufichiers);
 app.use ('/viewimages', viewImages);
 

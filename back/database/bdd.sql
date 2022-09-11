@@ -16,3 +16,6 @@ CREATE TABLE `path_image`(
 /*------ insertions--------*/
 
 /*INSERT INTO path_image (`id`, `name`, `date`) VALUES (1, 'jojo.png', '2022-06863Z-07T14:51:59.');*/
+INSERT INTO path_image (`id`, `name`, `date`) VALUES (1, 'grapefruit-slice-332-332.jpg', '2022-06863Z-07T14:51:59.');
+INSERT INTO path_image (`id`, `name`, `date`) VALUES (2, 'istockphoto-1140180560-612x612.jpg', '2022-06863Z-07T14:51:59.');
+INSERT INTO path_image (`id`, `name`, `date`) VALUES (3, 'troll.png', '2022-06863Z-07T14:51:59.');

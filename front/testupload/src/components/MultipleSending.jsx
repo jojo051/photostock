@@ -30,8 +30,15 @@ const MultipleSending = () => {
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
-    .then((res)=>console.log("res",res))
-    .catch((err)=>alert(err.response.data, "fichier pas evoyer"))
+    .then((res)=>{
+      alert("fichier envoyer")
+      console.log(res);
+      window.history.go()
+    })
+    .catch((err)=>{
+      console.log("err",err.response.data);
+      alert("fichier n'a pas été envoyer")
+    })
   };
 
   return (

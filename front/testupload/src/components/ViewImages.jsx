@@ -3,7 +3,7 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const ViewImages = () => {
-  const[data, setData] = useState(["rgtrg"])
+  const[data, setData] = useState([])
   const PATH_URL = "https://localhost:8000/viewimages";
   
   useEffect(()=>{
@@ -16,11 +16,13 @@ const ViewImages = () => {
   },[])
 
   return (
-    <div>
+    <div className='view-image'>
         <h1>Visioner vos images</h1>
-        <div><Link to="/">Retour</Link></div>
-        {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image a afficher</p> :
-        data.map((image,i)=> <img key={i} src={`https:localhost:8000/images/${image.name}`} alt={image.name} /> )}
+        <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
+        <div className='images-sort' >
+          {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image a afficher</p> :
+          data.map((image,i)=> <img className='images images-sort' key={i} src={`https:localhost:8000/images/${image.name}`} alt={image.name} />)}
+        </div>
         </div>
   );
 };

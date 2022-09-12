@@ -43,16 +43,16 @@ const MultipleSending = () => {
   };
 
   return (
-    <div>
+    <div className='upload'>
       <h1>Envoyer vos images</h1>
-      <Link to="/">Retour</Link>
+      <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
       {files.map((img,i)=><li key={i} >{img.name}</li>)}
-      <form onSubmit={(e)=>handleSubmit(e)} >
-      <input type="file" onChange={(e)=>onImageChange(e)} multiple/>
-      {imageURLs.map(imageSrc =><img key={imageSrc} src={imageSrc} alt={imageSrc.name}/>  )}
-      <button type="submit" > envoyer </button>
+      <form className='upload-form' onSubmit={(e)=>handleSubmit(e)} >
+      <input className='btn-input' type="file" onChange={(e)=>onImageChange(e)} multiple/>
+      {imageURLs.map(imageSrc =><img className='images' key={imageSrc} src={imageSrc} alt={imageSrc.name}/>  )}
+      <button className='btn-upload' type="submit" > envoyer </button>
       </form>
-      <div><Link to="/view">Voir vos images</Link></div>
+      <div className='btn-link'><Link className='link' to="/view">Voir vos images</Link></div>
     </div>
   );
 };

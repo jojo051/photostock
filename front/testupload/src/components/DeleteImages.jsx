@@ -60,18 +60,18 @@ const DeleteImages = () => {
   }
 
   return (
-    <div>
+    <div className='delete' >
       <h1>Suprimer vos image</h1>
-      <div><Link to="/">Retour</Link></div>
-      <form onSubmit={submitForm}>
+      <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
+      <form className='delete-form' onSubmit={submitForm}>
         {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image à suprimer</p> :
         data.map((image,i)=>
-          <div key={i} >
-            <input type="checkbox" onClick={(e)=>handleClick(e)} ></input>
+          <div className='delete-images' key={i} >
+            <input className='delete-input' type="checkbox" onClick={(e)=>handleClick(e)} ></input>
             <img id={image.id} style={{height:"80px"}} src={`https:localhost:8000/images/${image.name}`} alt={image.name} />
           </div>
         )}
-      <button type="submit">suprimer</button>
+      <button className='btn-suppr' type="submit">suprimer</button>
       </form>
     </div>
   );

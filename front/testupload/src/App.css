@@ -1,38 +1,130 @@
-.App {
+*{
+  margin:0;
+  padding:0;
+  font-family: "Futura", "Trebuchet MS", Arial, sans-serif;
+  background-color: ;
+}
+
+h1 {
   text-align: center;
+  color: crimson;
+  padding-top: 1em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-link {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 2px black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(86, 228, 233);
+  height: 1.5em;
+  width: 10em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link{
+   text-decoration: none;
+   color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.btn-upload{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: solid 2px black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(180, 179, 184);
+  height: 1.5em;
+  width: 6em;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-input{
+  display: flex;
+  justify-content: center;
+  border: solid 2px black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(180, 179, 184);
+  height: 1.5em;
+  width: 20em;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-form{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin: 0.2em 0;
+}
+
+.images{
+  height: 10vh;
+  width: auto;
+  margin: 0.4em 2px;
+}
+
+.view-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images-sort{
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-form{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-images{
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+}
+
+.delete-input{
+  margin-right: 1em;
+}
+
+.btn-suppr{
+  display: flex;
+  justify-content: center;
+  border: solid 2px black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(180, 179, 184);
+  height: 1.5em;
+  width: 6em;
+  color: black;
 }

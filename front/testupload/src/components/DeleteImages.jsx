@@ -1,9 +1,8 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 const DeleteImages = () => {
-  const inputEl =useRef(null)
   const[data, setData] = useState([]);
   const[dataErrase, setDataErrase] = useState([]);
   
@@ -62,14 +61,16 @@ const DeleteImages = () => {
 
   return (
     <div>
-      <h1>delette image</h1>
+      <h1>Suprimer vos image</h1>
+      <div><Link to="/">retour</Link></div>
       <form onSubmit={submitForm}>
-      {data.map((image,i)=>
-        <div key={i} >
-          <input ref={inputEl} type="checkbox" onClick={(e)=>handleClick(e)} ></input>
-          <img id={image.id} style={{height:"80px"}} src={`https:localhost:8000/images/${image.name}`} alt={image.name} />
-        </div>
-      )}
+        {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image à suprimer</p> :
+        data.map((image,i)=>
+          <div key={i} >
+            <input type="checkbox" onClick={(e)=>handleClick(e)} ></input>
+            <img id={image.id} style={{height:"80px"}} src={`https:localhost:8000/images/${image.name}`} alt={image.name} />
+          </div>
+        )}
       <button type="submit">suprimer</button>
       </form>
     </div>

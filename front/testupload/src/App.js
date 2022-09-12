@@ -4,13 +4,17 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import FormDoc from "./pages/FormDoc";
+import DeleteImages from "./components/DeleteImages";
+import ViewImages from "./components/ViewImages"
+import MultipleSending from "./components/MultipleSending";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/form" element={<FormDoc />}/>
+        <Route path="/upload" element={<MultipleSending />}/>
+        <Route path="/view" element={<ViewImages />}/>
+        <Route path="/delete" element={<DeleteImages />}/>
         <Route path="*" element={<Home />}/>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const MultipleSending = () => {
   const[files,setFiles]=useState([]);
@@ -43,13 +44,15 @@ const MultipleSending = () => {
 
   return (
     <div>
-      <h1>multiple envoie</h1>
+      <h1>Envoyer vos images</h1>
+      <Link to="/">retour</Link>
       {files.map((img,i)=><li key={i} >{img.name}</li>)}
       <form onSubmit={(e)=>handleSubmit(e)} >
       <input type="file" onChange={(e)=>onImageChange(e)} multiple/>
       {imageURLs.map(imageSrc =><img key={imageSrc} src={imageSrc} alt={imageSrc.name}/>  )}
       <button type="submit" > envoyer </button>
       </form>
+      <div><Link to="/view">Voir vos images</Link></div>
     </div>
   );
 };

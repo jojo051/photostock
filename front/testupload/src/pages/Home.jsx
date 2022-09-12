@@ -5,9 +5,9 @@ const Home = () => {
     return (
         <div>
             <h1>Bienvenue sur mon gestionnaire d'images</h1>
-            <div><Link to="/upload">envoyer image</Link></div>
-            <div><Link to="/view">visioner image</Link></div>
-            <div><Link to="/delete">suprimer image</Link></div>
+            <div><Link to="/upload">Envoyer images</Link></div>
+            <div><Link to="/view">Visioner images</Link></div>
+            <div><Link to="/delete">Suprimer images</Link></div>
         </div>
     );
 };

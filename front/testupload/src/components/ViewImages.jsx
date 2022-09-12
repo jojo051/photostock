@@ -18,7 +18,7 @@ const ViewImages = () => {
   return (
     <div>
         <h1>Visioner vos images</h1>
-        <div><Link to="/">retour</Link></div>
+        <div><Link to="/">Retour</Link></div>
         {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image a afficher</p> :
         data.map((image,i)=> <img key={i} src={`https:localhost:8000/images/${image.name}`} alt={image.name} /> )}
         </div>

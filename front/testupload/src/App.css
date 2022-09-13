@@ -2,7 +2,6 @@
   margin:0;
   padding:0;
   font-family: "Futura", "Trebuchet MS", Arial, sans-serif;
-  background-color: ;
 }
 
 h1 {
@@ -19,14 +18,18 @@ h1 {
   border: solid 2px black;
   border-radius: 20px;
   text-align: center;
-  background-color: rgb(86, 228, 233);
-  height: 1.5em;
-  width: 10em;
+  background-color:#93859A;
+  height: 2em;
+  width: 11em;
+}
+.btn-link:hover{
+  background-color:#949495;
+  transform: translate(0%,5px);
 }
 
 .link{
    text-decoration: none;
-   color: black;
+   color: white;
 }
 
 .home{

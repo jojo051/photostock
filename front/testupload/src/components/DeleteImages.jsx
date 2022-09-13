@@ -11,7 +11,6 @@ const DeleteImages = () => {
   useEffect(()=>{
     Axios.get(PATH_URL)
     .then((res)=>{
-      console.log("res",res.data)
       setData(res.data)
       setDataErrase(res.data.map(element => {
         const addData = {"check":false}
@@ -45,18 +44,21 @@ const DeleteImages = () => {
 
   const submitForm =(e)=>{
     e.preventDefault();
-    const submitDataErase = dataErrase.filter(el => el.check == true).map(el => el.id).join()
-    console.log('jojo',submitDataErase);
-    Axios.delete(`https://localhost:8000/viewimages/${submitDataErase}`)
-    .then((res)=> {
-      console.log("resEnvoi",res);
-      alert(res.data);
-      window.history.go()
-    })
-    .catch((err)=> {
-      console.log("errEnvoi",err);
-      alert("echec envoie");
-    })
+    if(dataErrase.length == 0 || (JSON.stringify(dataErrase.filter(el=>el.check === false)) == JSON.stringify(dataErrase)) ){
+      alert("Vous n'avez rien selectionner")
+    } else {
+      const submitDataErase = dataErrase.filter(el => el.check == true).map(el => el.id).join()
+      //console.log('jojo',submitDataErase);
+      Axios.delete(`https://localhost:8000/viewimages/${submitDataErase}`)
+      .then((res)=> {
+        alert(res.data);
+        window.history.go()
+      })
+      .catch((err)=> {
+        console.log("errEnvoi",err);
+        alert("echec envoie");
+      })
+    }
   }
 
   return (

@@ -9,7 +9,6 @@ const ViewImages = () => {
   useEffect(()=>{
     Axios.get(PATH_URL)
     .then((res)=>{
-      console.log("res",res.data)
       setData(res.data);
     })
     .catch((err)=>console.log("err",err));
@@ -20,7 +19,7 @@ const ViewImages = () => {
         <h1>Visioner vos images</h1>
         <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
         <div className='images-sort' >
-          {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image a afficher</p> :
+          {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image à afficher</p> :
           data.map((image,i)=> <img className='images images-sort' key={i} src={`https:localhost:8000/images/${image.name}`} alt={image.name} />)}
         </div>
         </div>

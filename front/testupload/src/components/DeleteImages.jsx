@@ -63,7 +63,7 @@ const DeleteImages = () => {
 
   return (
     <div className='delete' >
-      <h1>Suprimer vos image</h1>
+      <h1 className='h1-delete'>Suprimer vos image</h1>
       <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
       <form className='delete-form' onSubmit={submitForm}>
         {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image à suprimer</p> :

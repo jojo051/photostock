@@ -16,7 +16,7 @@ const ViewImages = () => {
 
   return (
     <div className='view-image'>
-        <h1>Visioner vos images</h1>
+        <h1 className='h1-view' >Visioner vos images</h1>
         <div className='btn-link'><Link className='link' to="/">Retour</Link></div>
         <div className='images-sort' >
           {JSON.stringify(data)=== JSON.stringify([]) ?<p>Vous n'avez pas d'image à afficher</p> :

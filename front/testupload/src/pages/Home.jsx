@@ -8,6 +8,7 @@ const Home = () => {
             <div className='btn-link'><Link className='link' to="/upload">Envoyer images</Link></div>
             <div className='btn-link'><Link className='link' to="/view">Visioner images</Link></div>
             <div className='btn-link'><Link className='link' to="/delete">Suprimer images</Link></div>
+            <div className='btn-link'><Link className='link' to="/test">TEST</Link></div>
         </div>
     );
 };

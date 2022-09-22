@@ -25,10 +25,11 @@ app.use('/images', express.static('images'));
 //path
 const uploaddufichiers = require('./routes/uploaddufichiers.js');
 const viewImages = require('./routes/viewImages.js');
+const testImages = require('./routes/testImages.js');
 
 app.use ('/uploaddufichiers', uploaddufichiers);
 app.use ('/viewimages', viewImages);
-
+app.use ('/test-images', testImages)
 
 const server = https.createServer(options, app).listen(process.env.PORT, function(){
   console.log(`Server is listening on ${process.env.PORT}`)
